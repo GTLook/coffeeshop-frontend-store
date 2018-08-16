@@ -5,17 +5,12 @@ export const CHANGE_ACTIVE_PAGE = 'CHANGE_ACTIVE_PAGE'
 export const GET_ORDERS = 'GET_ORDERS'
 export const SET_ACTIVE_ORDER = 'SET_ACTIVE_ORDER'
 
-
-
 const pages = [
   {id: 0, name: 'home'},
   {id: 1, name: 'login'}
 ]
 
-
-
 const API = `${process.env.REACT_APP_BACKEND}`
-
 
 export const changeActivePage = pageId => (
   dispatch => {
@@ -26,13 +21,10 @@ export const changeActivePage = pageId => (
   }
 )
 
-
 export const getOrders = userId => (
   dispatch => {
-    console.log(userId);
     request(`/api/shop/${userId}/orders`)
     .then(orders => {
-      console.log('this is dispatching...')
       dispatch({
         type: GET_ORDERS,
         payload: orders
@@ -40,7 +32,6 @@ export const getOrders = userId => (
     })
   }
 )
-
 
 export const setActiveOrder = order => (
   dispatch => {
@@ -50,7 +41,6 @@ export const setActiveOrder = order => (
     })
   }
 )
-
 
 export const updateOrderStatus = (userId, orderId, is_fulfilled, is_canceled) => (
   dispatch => {

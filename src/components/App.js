@@ -14,7 +14,6 @@ const App = (props) => {
   request('/auth/token')
       .then(response => {
         AuthenticationService.setAuthState(response.data)
-
       })
 
   return (

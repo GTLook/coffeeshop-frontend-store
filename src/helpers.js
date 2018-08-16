@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
-////////////////////////////////////////////////////////////////////
-/// AuthenticationWrapper //////////////////////////////////////////
+// AuthenticationWrapper
 
 class AuthenticationWrapper extends Component{
   constructor(props){
@@ -36,15 +35,13 @@ class AuthenticationWrapper extends Component{
       <Component {...props} authState={this.state.authState} authStatePending={this.state.authStatePending}/>
     )
   }
-
 }
 
 export const withAuthentication = (Component) =>
   (props) =>
     <AuthenticationWrapper Component={Component} {...props}/>
 
-////////////////////////////////////////////////////////////////////
-/// AuthenticationService //////////////////////////////////////////
+// AuthenticationService
 
 class AuthService{
   constructor(){
@@ -72,10 +69,10 @@ class AuthService{
     this.registeredCallbacks = this.registeredCallbacks.filter(ele => ele !== cb)
   }
 }
+
 export const AuthenticationService = new AuthService()
 
-////////////////////////////////////////////////////////////////////
-/// AuthenticatedRoute /////////////////////////////////////////////
+// AuthenticatedRoute 
 
 const AuthRoute = (props) => {
   if(props.authStatePending && !props.authState){
@@ -88,8 +85,7 @@ const AuthRoute = (props) => {
 
 export const AuthenticatedRoute = withAuthentication(AuthRoute)
 
-////////////////////////////////////////////////////////////////////
-/// request ////////////////////////////////////////////////////////
+// request
 
 export const request = (path, method = 'get', body = null) => {
   let bearerToken = ''

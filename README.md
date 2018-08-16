@@ -32,7 +32,7 @@ Start the react development server:
 
 ## Deployment
 
-This project has been deployed on Heroku at the address: 
+This project has been deployed on Heroku at the address:
 * https://coffeeshop-customer.herokuapp.com
 * https://coffeeshop-store.herokuapp.com
 
@@ -59,10 +59,9 @@ Please send either of the developers a message for details on our code of conduc
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
 * Inspiration
 * etc

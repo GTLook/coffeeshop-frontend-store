@@ -4,11 +4,8 @@ import {SideNav, SideNavItem, Button, Collapsible, CollapsibleItem, Collection, 
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 
-
 import {changeActivePage} from '../actions'
-// import { withAuthentication } from '../helpers'
 import { request, AuthenticationService, withAuthentication } from '../helpers'
-
 
 const handleSignIn = (event, props) => {
   event.preventDefault()
@@ -17,15 +14,12 @@ const handleSignIn = (event, props) => {
     email: inputEmail.value,
     password: inputPassword.value })
   .then(response => {
-    // this.setState({ showErrorMessage: false })
     localStorage.setItem('token', response.data.token)
     props.changeActivePage(0)
   })
   .catch(error => {
-    // this.setState({showErrorMessage: true})
   })
 }
-
 
 
 const Login = (props) => {
@@ -39,7 +33,6 @@ const Login = (props) => {
         </form>
     </section>
     </div>
-
 )}
 
 const mapDispatchToProps = dispatch => bindActionCreators({changeActivePage}, dispatch)
